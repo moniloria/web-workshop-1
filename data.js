@@ -103,7 +103,6 @@ function calculateAverage(){
 function displayAverage()
 {
     var paragraph = document.getElementById("paragraph");
-    //var paragraph = document.createElement("p");
     paragraph.classList.add("badge");
     paragraph.classList.add("badge-info")    
     paragraph.innerText = "Average: " + calculateAverage();
@@ -111,10 +110,14 @@ function displayAverage()
 }
 
 function addFields(){
-
+    
     let newName = document.getElementById("newName").value;
-    let newScore = parseInt(document.getElementById("newScore").value);
+    let newScore = document.getElementById("newScore").value;
     let newID = document.getElementById("newID").value;
-    students.push({"id":newID,"name":newName,"score":newScore});
+
+    if (newScore == ""){
+        return
+    }
+    students.push({"id":newID,"name":newName,"score":parseInt(newScore)});
     refreshTable()
 }
