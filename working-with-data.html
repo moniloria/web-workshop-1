@@ -5,39 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Working with data</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="shared.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="shared.css" />
     <script src="data.js"></script>
 </head>
-<body class="container" onload="loadDataGrid()">
+<body class="container" onload="loadData()">
+
+    <div>
+        <pre id = initalSummary class="alert"></pre>
+    </div>
     <header class="jumbotron">
         <h1>List of students</h1>
     </header>
-    
-    <section class="row-fluid">
-        <section class="btn-group">
-            <button class="btn btn-primary" onclick="loadDataGrid()">Load</button>
-            <button class="btn btn-secondary" onclick="displayAverage()">Average</button>
-        </section>
-    </section>
-    <section class="row-fluid">
-        <section id="dataList" class="border">
+    <div class = "container">
+            <section class = "btn-group">
+                <button class="btn btn-primary" onclick="refreshTable()">Load</button>
+                <button class="btn btn-secondary" onclick="displayAverage()">Average</button>
+                
+            </section>
+    </div>
+    <div class = "alert">
+        <label for="name">Passing grade: </label>
+        <input type="text" id="passingScore">
+        <button type="submit" onclick="refreshTable()">Enter</button>
+    </div>
+
+    <div class = "alert">
+        <section id="Title" class="border">
             <div class="row">
-                <div class="col-md">
-                    <b>Id</b>
+                <div class="col-sm">
+                    <b>ID</b>
                 </div>
-                <div class="col-md">
+                <div class="col-sm">
                     <b>Name</b>
                 </div>
-                <div class="col-md">
+                <div class="col-sm">
                     <b>Score</b>
                 </div>
             </div>
         </section>
-    </section>
-    <section class="row-fluid">
-        <section id="resultSection" class="alert alert-info">
-        </section>
-    </section>
+        <section id="textTable" class="border"></section>
+    </div>
+    <div class = "alert">
+        <section id="resultSection" class="alert alert-info hidden"></section>
+        <p id="paragraph"></p>
+    </div>
+    <!-- here I have the JSON code -->
+    <h3>JSON</h3>
+    <pre id="JSON_data" class="alert alert-secondary"> </pre>
 </body>
 </html>

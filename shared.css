@@ -5,3 +5,7 @@ body {
 .highlight {
     background-color: yellow;
 }
+
+.failed {
+    color: red;
+}
