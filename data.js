@@ -7,8 +7,6 @@ var students = [
 ];
 
 
-
-
 function loadData(){
     
     let JSON_data = document.getElementById("JSON_data");
@@ -42,10 +40,7 @@ function clearAll(){
         }
         i ++;
     }
-
-
-
-    
+    document.getElementById("passingScore").value="";
 }
 
 function refreshTable(){
@@ -115,10 +110,11 @@ function displayAverage()
     resultSection.appendChild(paragraph);
 }
 
-function myReplacer(name, val) {
-    if (typeof val === 'string') {
-        return val.toString().toUpperCase();  
-     } else {
-        return val; // return as is
-    }
-};
+function addFields(){
+
+    let newName = document.getElementById("newName").value;
+    let newScore = parseInt(document.getElementById("newScore").value);
+    let newID = document.getElementById("newID").value;
+    students.push({"id":newID,"name":newName,"score":newScore});
+    refreshTable()
+}

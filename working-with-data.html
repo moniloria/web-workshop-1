@@ -17,7 +17,23 @@
     <header class="jumbotron">
         <h1>List of students</h1>
     </header>
-    <div class = "container">
+    <section>
+        <div class="form-group">
+            <label for="studentName">Name</label>
+            <input type="text" class="form-control" id="newName" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="studentScore">Score</label>
+            <input type="text" class="form-control" id="newScore" placeholder="Score">
+        </div>
+        <div class="form-group">
+            <label for="studentsID">ID</label>
+            <input type="text" class="form-control" id="newID" placeholder="ID">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="addFields()">Add</button>
+    </section>
+
+    <div class = "alert">
             <section class = "btn-group">
                 <button class="btn btn-primary" onclick="refreshTable()">Load</button>
                 <button class="btn btn-secondary" onclick="displayAverage()">Average</button>
@@ -28,7 +44,7 @@
         <label for="name">Passing grade: </label>
         <input type="text" id="passingScore">
         <button type="submit" onclick="refreshTable()">Enter</button>
-        <button type="clearAll" onclick="clearAll()">Clear</button>
+        <button type="submit" id="clearAll" onclick="clearAll()" onclick="clearAll()">Clear</button>
     </div>
 
     <div class = "alert">
