@@ -31,15 +31,22 @@ function loadData(){
 
 }
 
-/*function refreshTable(){
-    loadStudents()
-    let children = textTable.childNodes;
+function clearAll(){
+    var isToggled = false;
+    var textTable = document.getElementById("textTable");
+    var i = 0;
+    while (i<textTable.childNodes.length) {
+        let scoreColumn = textTable.childNodes[i].childNodes[2]; //here I access column 3
+        if (scoreColumn.classList.contains("failed")) {
+            scoreColumn.classList.remove("failed");
+        }
+        i ++;
+    }
 
-    children.forEach(child => {
-        child.classList.remove("failed");
-    });
+
+
     
-}*/
+}
 
 function refreshTable(){
     let textTable = document.getElementById("textTable");

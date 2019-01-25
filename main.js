@@ -43,11 +43,6 @@ var isToggled = false;
 
 function toggleHighlight() {
     var textSection = document.getElementById("textSection");
-
-    //textSection.className = "highlight";
-
-    //textSection.classList.toggle("highlight");
-    //textSection.classList.remove("normal");
     isToggled = !isToggled;
 
     if (isToggled) {
