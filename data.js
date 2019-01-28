@@ -1,10 +1,5 @@
 
-var students = [
-    {id: "1122222", name: "John", score: 90 },
-    {id: "2223333", name: "Larry", score: 60 },
-    {id: "4455555", name: "Joseph", score: 50 },
-    {id: "5526666", name: "Karla", score: 80}
-];
+var students = [];
 
 
 function loadData(){
@@ -12,20 +7,20 @@ function loadData(){
     let JSON_data = document.getElementById("JSON_data");
     JSON_data.innerText = JSON.stringify(students, undefined, 2);
 
-    var names = [];
+    /*var names = [];
         students.forEach(student => {
         names.push(student.name);
         });
 
-    let initalSummary = document.getElementById("initalSummary")
+    /*let initalSummary = document.getElementById("initalSummary")
     var par1 = document.createElement("p");
     par1.innerText = "Students are: " +names;
     initalSummary.appendChild(par1);
     var par2 = document.createElement("p");
     par2.innerText = "Average: " + calculateAverage();
-    initalSummary.appendChild(par2);
+    initalSummary.appendChild(par2);*/
     
-    loadStudents()
+    //loadStudents()
 
 }
 
