@@ -115,9 +115,18 @@ function addFields(){
     let newScore = document.getElementById("newScore").value;
     let newID = document.getElementById("newID").value;
 
-    if (newScore == ""){
+    if (newScore == "" || newName == "" || newID == ""){
+        alert("All fields are required");
+        //clearModal()
         return
     }
     students.push({"id":newID,"name":newName,"score":parseInt(newScore)});
     refreshTable()
+    clearModal()
+}
+
+function clearModal(){
+    document.getElementById("newName").value = "";
+    document.getElementById("newScore").value = "";
+    document.getElementById("newID").value = "";
 }
